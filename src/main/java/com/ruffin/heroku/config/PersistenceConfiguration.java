@@ -1,10 +1,10 @@
 package com.ruffin.heroku.config;
 
-import org.springframework.context.annotation.Configuration;
+// import org.springframework.context.annotation.Configuration;
 
 // configuration full java
 
-@Configuration
+// @Configuration
 public class PersistenceConfiguration {
 	
 //	@Bean
