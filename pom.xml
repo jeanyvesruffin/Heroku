@@ -14,6 +14,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>heroku</name>
 	<description>Demo project for Spring Boot</description>
+<!-- 	ligne permettant la creation du fichier WAR -->
+	<packaging>war</packaging>
 
 	<properties>
 		<java.version>14</java.version>
@@ -25,18 +27,19 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 			<!-- afin de tester le deployement de notre app, nous retirons le container 
 				par defaut TOMCAT -->
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-tomcat</artifactId>
-				</exclusion>
-			</exclusions>
+			<!-- remove dependence pour la creation du war <exclusions> <exclusion> 
+				<groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-tomcat</artifactId> 
+				</exclusion> </exclusions> -->
 		</dependency>
 		<dependency>
-			<!-- jetty sera le container de remplacement de tomcat -->
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jetty</artifactId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
 		</dependency>
+		<!-- remove dependence pour la creation du war <dependency> jetty sera 
+			le container de remplacement de tomcat <groupId>org.springframework.boot</groupId> 
+			<artifactId>spring-boot-starter-jetty</artifactId> </dependency> -->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>

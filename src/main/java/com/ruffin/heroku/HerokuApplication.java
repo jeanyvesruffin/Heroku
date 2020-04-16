@@ -2,9 +2,15 @@ package com.ruffin.heroku;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+
+// extends SpringBootServletInitializer 
+// Il s'agit d'une extension de WebApplicationInitializer 
+// qui exécute une SpringApplication à partir d'une archive WAR 
+// traditionnelle déployée sur un conteneur Web
 
 @SpringBootApplication
-public class HerokuApplication {
+public class HerokuApplication extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
 		SpringApplication.run(HerokuApplication.class, args);
